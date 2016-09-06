@@ -1,0 +1,121 @@
+<!Doctype html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet"> 
+<style>
+    body {
+      animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 50s; /* Chrome and Safari */
+    }
+
+    @keyframes colorchange
+    {
+      0%   {background: red;}
+      25%  {background: yellow;}
+      50%  {background: blue;}
+      75%  {background: green;}
+      100% {background: red;}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background: red;}
+      25%  {background: yellow;}
+      50%  {background: blue;}
+      75%  {background: green;}
+      100% {background: red;}
+    }
+
+    #hello {
+      color: white;
+      font-size: 80px;
+    font-family: 'Russo One', sans-serif;
+      text-shadow:Black 2px 1px;
+      text-align: center;;
+    }
+
+
+
+    .circular {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  background: url(https://s-media-cache-ak0.pinimg.com/236x/b2/72/63/b27263c45f884c9712405d5195bab054.jpg) no-repeat;
+  }
+
+  #myTypingText {
+  background-color:transparent;
+  width:700px;
+  height:120px;
+  padding:12px;
+  color:#FFF;
+  font-family:Arial, Helvetica, sans-serif;
+        font-size:16px;
+  line-height:1.5em;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+  <ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+  <center>
+  <div class="circular"></div>
+</center>
+  <div id="hello">HELLO WORLD</div>
+ <center>
+ <div id="myTypingText"></div></center>
+<script>
+var myString = " Kami bangsa Indonesia dengan ini menjatakan kemerdekaan Indonesia.Hal-hal jang mengenai pemindahan kekoeasaan d.l.l., diselenggarakandengan tjara saksama dan dalam tempo jang sesingkat-singkatnja.Djakarta, hari 17 boelan 8 tahoen 05 Atas nama bangsa Indonesia.Soekarno/Hatta.";
+var myArray = myString.split("");
+var loopTimer;
+function frameLooper() {
+  if(myArray.length > 0) {
+    document.getElementById("myTypingText").innerHTML += myArray.shift();
+  } else {
+    clearTimeout(loopTimer); 
+                return false;
+  }
+  loopTimer = setTimeout('frameLooper()',70);
+}
+frameLooper();
+</script>
+</body>
+</html>
+
+
+
